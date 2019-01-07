@@ -13,7 +13,7 @@ def index():
        <a href="https://docs.battlesnake.io">https://docs.battlesnake.io</a>.
     '''
 
-@bottle.route('/form')
+@bottle.route('/cgi-bin/form')
 def index():
     return '''
     <form action="/form">
@@ -34,7 +34,7 @@ def static(path):
     """
     return bottle.static_file(path, root='static/')
 
-@bottle.post('/form')
+@bottle.post('/cgi-bin/form')
 def form():
     
     form = cgi.FieldStorage()
