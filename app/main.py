@@ -2,6 +2,7 @@ import json
 import os
 import random
 import bottle
+import cgi
 
 from api import ping_response, start_response, move_response, end_response
 
@@ -12,6 +13,17 @@ def index():
        <a href="https://docs.battlesnake.io">https://docs.battlesnake.io</a>.
     '''
 
+@bottle.route('/form')
+def index():
+    return '''
+    <form action="https://traffic-management-1.herokuapp.com/form">
+ <p>Enter a year and find out if it's a leap year:
+ <input type="text" name="year" size="6">
+ <input type="submit">
+ <input type="reset">
+</form>
+'''
+
 @bottle.route('/static/<path:path>')
 def static(path):
     """
@@ -21,6 +33,15 @@ def static(path):
     This can be used to return the snake head URL in an API response.
     """
     return bottle.static_file(path, root='static/')
+
+@bottle.post('/form')
+def index():
+    
+    form = cgi.FieldStorage()
+    
+    year = form['year'].value
+    
+    return str(year)
 
 @bottle.post('/ping')
 def ping():
