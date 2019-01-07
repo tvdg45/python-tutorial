@@ -41,8 +41,7 @@ def index():
     
     year = form['year'].value
     
-    return str(year)
-
+    return "%s year: " % year
 @bottle.post('/ping')
 def ping():
     """
