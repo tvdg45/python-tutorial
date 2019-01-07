@@ -13,10 +13,10 @@ def index():
        <a href="https://docs.battlesnake.io">https://docs.battlesnake.io</a>.
     '''
 
-@bottle.route('https://traffic-management-1.herokuapp.com/form')
+@bottle.route('/form')
 def index():
     return '''
-    <form action="https://traffic-management-1.herokuapp.com/form">
+    <form action="/form">
  <p>Enter a year and find out if it's a leap year:
  <input type="text" name="year" size="6">
  <input type="submit">
@@ -34,7 +34,7 @@ def static(path):
     """
     return bottle.static_file(path, root='static/')
 
-@bottle.post('https://traffic-management-1.herokuapp.com/form')
+@bottle.post('/form')
 def form():
     
     form = cgi.FieldStorage()
