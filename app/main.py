@@ -35,7 +35,7 @@ def static(path):
     return bottle.static_file(path, root='static/')
 
 @bottle.post('/form')
-def index():
+def form():
     
     form = cgi.FieldStorage()
     
