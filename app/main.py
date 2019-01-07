@@ -13,7 +13,7 @@ def index():
        <a href="https://docs.battlesnake.io">https://docs.battlesnake.io</a>.
     '''
 
-@bottle.route('/form')
+@bottle.route('https://traffic-management-1.herokuapp.com/form')
 def index():
     return '''
     <form action="https://traffic-management-1.herokuapp.com/form">
@@ -34,7 +34,7 @@ def static(path):
     """
     return bottle.static_file(path, root='static/')
 
-@bottle.post('/form')
+@bottle.post('https://traffic-management-1.herokuapp.com/form')
 def form():
     
     form = cgi.FieldStorage()
