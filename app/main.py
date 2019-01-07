@@ -16,7 +16,7 @@ def index():
 @bottle.route('/cgi-bin/form')
 def index():
     return '''
-    <form action="/form">
+    <form action="/cgi-bin/form">
  <p>Enter a year and find out if it's a leap year:
  <input type="text" name="year" size="6">
  <input type="submit">
