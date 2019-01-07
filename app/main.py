@@ -41,7 +41,7 @@ def form():
     
     year = form['year'].value
     
-    return "%s year: " % year
+    return "hey"
 @bottle.post('/ping')
 def ping():
     """
